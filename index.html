@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>haosf_好sf_好私服_新开传奇搜服网站发布网_www.haosf.com</title>
+<meta name="description" content="好搜服(www.haosf.com)是国内专业的传奇私服发布网站,为玩家提供海量好私服游戏开区信息,分享热门的热血传奇sf心得,haosf.com是玩家查找优质新开传奇的最佳网站。"/>
+<meta name="keywords" content="好私服,haosf,haosf.com,www.haosf.com"/>
+    <style>
+        /* --- 基础重置 (Reset) --- */
+        body, h1, h2, h3, p, ul, li, form, input, table, tr, td { margin: 0; padding: 0; }
+        body {
+            font-family: "SimSun", "宋体", Arial, sans-serif; /* 强制宋体，还原经典质感 */
+            font-size: 12px;
+            color: #333;
+            background-color: #fff;
+            text-align: center; /* 让主容器居中 */
+        }
+        a { text-decoration: none; color: #333; }
+        a:hover { color: #f60; text-decoration: underline; }
+        ul { list-style: none; }
+        img { border: 0; }
+
+        /* --- 公共类 --- */
+        .w960 { width: 960px; margin: 0 auto; text-align: left; }
+        .red { color: #f00 !important; }
+        .blue { color: #00f !important; }
+        .green { color: #008000 !important; }
+        .bold { font-weight: bold; }
+        .center { text-align: center; }
+
+        /* --- 顶部工具条 --- */
+        .top-bar {
+            height: 28px;
+            line-height: 28px;
+            background: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+            color: #666;
+        }
+        .top-bar-inner { display: flex; justify-content: space-between; }
+
+        /* --- 头部区域 (Logo + 搜索) --- */
+        .header {
+            padding: 15px 0;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+        .logo-area {
+            width: 200px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #0099cc;
+            font-family: "Microsoft YaHei", sans-serif;
+            font-style: italic;
+            text-shadow: 2px 2px 0px #eee;
+        }
+        .logo-area span { color: #f60; }
+        
+        .search-area {
+            flex: 1;
+            text-align: center;
+        }
+        .search-box {
+            border: 2px solid #0099cc;
+            padding: 2px;
+            display: inline-block;
+            background: #fff;
+        }
+        .search-input {
+            width: 300px;
+            height: 28px;
+            line-height: 28px;
+            border: none;
+            outline: none;
+            padding: 0 5px;
+            font-size: 14px;
+        }
+        .search-btn {
+            background: #0099cc;
+            color: #fff;
+            border: none;
+            height: 28px;
+            width: 80px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* --- 导航栏 (核心特征) --- */
+        .nav-bar {
+            background-color: #0099cc; /* 99s 经典蓝 */
+            height: 38px;
+            line-height: 38px;
+        }
+        .nav-list { display: flex; }
+        .nav-list li { flex: 1; text-align: center; }
+        .nav-list a {
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            display: block;
+        }
+        .nav-list a:hover { background-color: #0077a3; text-decoration: none; }
+
+        /* --- 公告/广告区 --- */
+        .announce {
+            border: 1px solid #cceeff;
+            background: #f0f9ff;
+            padding: 10px;
+            margin-top: 10px;
+            line-height: 24px;
+            color: #006699;
+        }
+
+        /* --- 表格样式 (核心) --- */
+        .table-section { margin-top: 10px; }
+        .server-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #c0dbe9;
+        }
+        .server-table th {
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAeCAYAAADtlXTHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+vv3LwMTAwMDEwMS/v37l2Hq1KkMDOz/AQIsA90i36WqAAAAAElFTkSuQmCC') repeat-x #eef7ff; /* 模拟渐变背景 */
+            background-color: #e6f2fb;
+            height: 32px;
+            color: #005590;
+            font-weight: bold;
+            border-bottom: 1px solid #c0dbe9;
+        }
+        .server-table td {
+            height: 26px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+        
+        /* 列宽控制 */
+        .col-time { width: 70px; }
+        .col-name { width: 140px; }
+        .col-line { width: 120px; }
+        .col-ver  { width: 140px; }
+        .col-intro { text-align: left; padding-left: 10px; }
+        .col-go   { width: 70px; }
+
+        /* 特殊行样式 */
+        .row-recommend { background-color: #fff9e1; } /* 推荐/通套黄 背景 */
+        .row-recommend td { border-bottom: 1px solid #ffeebb; color: #f00; }
+        .row-normal:hover { background-color: #f0f8ff; }
+
+        /* 版本链接按钮 */
+        .btn-link {
+            color: #0099cc;
+            text-decoration: none;
+        }
+        .btn-link:hover { color: #f00; }
+
+        /* 日期分割条 */
+        .date-divider {
+            background-color: #f3f3f3;
+            color: #333;
+            font-weight: bold;
+            text-align: left;
+            padding: 5px 15px;
+            border: 1px solid #ddd;
+            margin-top: 15px;
+            border-left: 5px solid #0099cc; /* 左侧蓝色装饰条 */
+        }
+
+        /* --- 页脚 --- */
+        .footer {
+            margin-top: 20px;
+            border-top: 3px solid #0099cc;
+            padding: 20px;
+            background: #f9f9f9;
+            line-height: 2;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="w960 top-bar-inner">
+            <div class="left">您好，欢迎来到haosf传奇私服发布网！</div>
+            <div class="right">
+                <a href="#" class="red">发布站点</a> | 
+                <a href="#">保存到桌面</a> | 
+                <a href="#">设为首页</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="w960 header">
+        <div class="logo-area">
+            haosf<span>.com</span>
+        </div>
+        <div class="search-area">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="请输入您要找的版本，如：1.76">
+                <button class="search-btn">搜服</button>
+            </div>
+            <div style="margin-top:5px; font-size:12px; color:#999;">
+                热门搜索：<a href="#">1.76复古</a> <a href="#">单职业</a> <a href="#">迷失</a> <a href="#">合击</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-bar w960">
+        <ul class="nav-list">
+            <li><a href="#">网站首页</a></li>
+            <li><a href="#">今日新开</a></li>
+            <li><a href="#">通宵推荐</a></li>
+            <li><a href="#">极品推荐</a></li>
+            <li><a href="#">1.76精品</a></li>
+            <li><a href="#">单职业专区</a></li>
+            <li><a href="#">家族公会</a></li>
+            <li><a href="#">GM基地</a></li>
+        </ul>
+    </div>
+
+    <div class="w960">
+        
+        <div class="announce">
+            <span class="bold red">[公告]</span> haosf 提醒您：适度游戏益脑，沉迷游戏伤身。本站严禁发布黄赌毒及反动信息。<br>
+            <span class="bold blue">[推荐]</span> 2023年最新反外挂引擎上线，封杀一切加速！
+        </div>
+
+        <div class="date-divider">🔥 极品推荐 / 全天套黄</div>
+        <table class="server-table">
+            <thead>
+                <tr>
+                    <th>开区时间</th>
+                    <th>服务器名</th>
+                    <th>网络线路</th>
+                    <th>版本名称</th>
+                    <th>详细版本介绍</th>
+                    <th>查看</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="row-recommend">
+                    <td class="center bold red">全天固顶</td>
+                    <td class="center bold blue">屠龙霸主</td>
+                    <td class="center">双线BGP</td>
+                    <td class="center bold">1.80星王合击</td>
+                    <td class="col-intro bold red">█新版首区█ █终极狂暴█ █散人好混█ █长久稳定█</td>
+                    <td class="center"><a href="#" class="btn-link">点击进入</a></td>
+                </tr>
+                <tr class="row-recommend">
+                    <td class="center bold red">全天固顶</td>
+                    <td class="center bold blue">原始传奇</td>
+                    <td class="center">三线互通</td>
+                    <td class="center bold">1.76纯复古</td>
+                    <td class="col-intro bold red">>>>十年信誉保证<<< 无会员 无赞助 纯金币</td>
+                    <td class="center"><a href="#" class="btn-link">点击进入</a></td>
+                </tr>
+                <tr class="row-recommend">
+                    <td class="center bold red">全天固顶</td>
+                    <td class="center bold blue">一刀999</td>
+                    <td class="center">极速专线</td>
+                    <td class="center bold">超变单职业</td>
+                    <td class="col-intro bold red">上线送VIP20，切割9999万，光柱满地爆！</td>
+                    <td class="center"><a href="#" class="btn-link">点击进入</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="date-divider">📅 今日新开服务器 (Sort by Time)</div>
+        <table class="server-table">
+            <tbody>
+                <tr style="background:#f9f9f9; color:#666;">
+                    <td width="70">时间</td>
+                    <td width="140">名称</td>
+                    <td width="120">线路</td>
+                    <td width="140">版本</td>
+                    <td>详细介绍</td>
+                    <td width="70">进入</td>
+                </tr>
+                
+                <tr class="row-normal">
+                    <td class="center">13:30</td>
+                    <td class="center bold"><a href="#">再战江湖</a></td>
+                    <td class="center green">电信+网通</td>
+                    <td class="center">1.76金币版</td>
+                    <td class="col-intro">小极品+3，极品最高+5，一切靠打，回收秒到账</td>
+                    <td class="center"><a href="#" class="btn-link">访问</a></td>
+                </tr>
+                <tr class="row-normal">
+                    <td class="center">13:30</td>
+                    <td class="center bold"><a href="#">火龙传说</a></td>
+                    <td class="center green">千兆光纤</td>
+                    <td class="center">1.85火龙元素</td>
+                    <td class="col-intro blue">散人打金日赚500，老板多，装备值钱！</td>
+                    <td class="center"><a href="#" class="btn-link">访问</a></td>
+                </tr>
+                <tr class="row-normal">
+                    <td class="center">14:00</td>
+                    <td class="center bold"><a href="#">公益神器</a></td>
+                    <td class="center green">多线负载</td>
+                    <td class="center">我本沉默</td>
+                    <td class="col-intro">嘟嘟版本，铜域木域水域，情怀满满。</td>
+                    <td class="center"><a href="#" class="btn-link">访问</a></td>
+                </tr>
+                <tr class="row-normal">
+                    <td class="center">14:00</td>
+                    <td class="center bold"><a href="#">冰雪之城</a></td>
+                    <td class="center green">BGP机房</td>
+                    <td class="center">冰雪单职业</td>
+                    <td class="col-intro red">无门槛，无暗坑，官方授权，稳定开区！</td>
+                    <td class="center"><a href="#" class="btn-link">访问</a></td>
+                </tr>
+                 <tr class="row-normal">
+                    <td class="center">14:30</td>
+                    <td class="center bold"><a href="#">复古小极品</a></td>
+                    <td class="center green">双线</td>
+                    <td class="center">1.76复古</td>
+                    <td class="col-intro">经典重现，赤月终极，手动升级，无泡点。</td>
+                    <td class="center"><a href="#" class="btn-link">访问</a></td>
+                </tr>
+                 <tr class="row-normal">
+                    <td class="center">15:00</td>
+                    <td class="center bold"><a href="#">迷失大陆</a></td>
+                    <td class="center green">三线</td>
+                    <td class="center">超变迷失</td>
+                    <td class="col-intro">宝宝超强，上线召3只神兽，横扫全服！</td>
+                    <td class="center"><a href="#" class="btn-link">访问</a></td>
+                </tr>
+                 <tr class="row-normal">
+                    <td class="center">通宵</td>
+                    <td class="center bold"><a href="#">激情服</a></td>
+                    <td class="center green">极速云</td>
+                    <td class="center">轻变传奇</td>
+                    <td class="col-intro">攻沙奖励人民币，指挥激情，等你来战！</td>
+                    <td class="center"><a href="#" class="btn-link">访问</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="footer">
+        <div class="w960 center">
+            <p><a href="#">关于我们</a> | <a href="#">广告服务</a> | <a href="#">免责声明</a> | <a href="#">联系方式</a></p>
+            <p>Copyright © 2003-2023 haosf All Rights Reserved. </p>
+            <p>注意：本站为网页设计教学演示，所有内容均为虚拟数据，不提供任何实际游戏服务。</p>
+            <p style="color:#999">抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活</p>
+        </div>
+    </div>
+</body>
+</html>
